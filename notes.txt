@@ -1,0 +1,53 @@
+Js is a subset of typescript
+All js is ts but not all ts is js
+Benefits:
+ - Static typing
+ - Code completion
+ - Refactoring
+ - Shorthand notations
+
+Type of languages:
+ - statically-typed(c++, c#, java): does not have to compile to error and must declare a variable and what type of data goes into it
+ - dynamically typed(js, python, ruby): has to compile before erroring
+
+What is typescript:
+- just javascript with type casting aka oop principles + a lot more
+
+Pros:
+- insane scalability
+- ability to use features js cant in js applications
+- allows for better maitenance/changes for the lifetime of the applications
+
+Cons:
+- always have to compile(transpilation)
+- stricter coding style
+- technically more typing
+
+Why you should use typescript:
+- research has shwon that ts can spot 15% of common bugs
+- readability - it is easier to see what the code is supposed to do and when working in a team, it is easier to see what the other developers intended to
+- it is popular - knowing typescript will enable you to apply to more good jobs
+- learning typescript will give you a better understanding and anew perspective on javascript
+- addresses the shortcomings of js
+
+Why you shouldnt use typescript:
+ - typescripte takes longer to write than js as you have to specify types so for smaller solo projects it might not be worth understanding
+ - typescript has to be compiled - which can take time, especially in larger projects
+ BUTTTT.....
+  - but the extra time that you have to spend writing more precise code and compiling will be more than saved by how many fewer bugs you will have in your code
+  - for many projects - especially medium to large projects - typescript will save you lots of time and headaches
+  - and if you already know js, typescript wont be hard to learning
+
+How to get started:
+ - open vscode
+ - cd../ to github
+ - npm install typescript --save-dev 
+ - npx tsc -v [for getting the version]
+ - cd into the project
+ - npm init -y
+
+How to compile:
+ - for specific file - npx tsc [name of file]
+ - for all files in the terminal folder - npx tsc
+ - if you want a specific name - npx tsc index.ts --outfile file-name.js
+ - have the file watch sass - npx tsc index.ts -w
