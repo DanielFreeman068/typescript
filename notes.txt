@@ -51,3 +51,69 @@ How to compile:
  - for all files in the terminal folder - npx tsc
  - if you want a specific name - npx tsc index.ts --outfile file-name.js
  - have the file watch sass - npx tsc index.ts -w
+
+Watch Mode
+ - there is a built in watch mode, similar to nodemon that will compile every time a change is made and saved
+ - tsc app.ts -w //watches app.ts
+ - tsc -w //watches files in dir
+Initialize to TS
+ - watch mode does not work without a config file
+ - to configure your ts compiler then you need to create the config file using:
+ - npx tsc -init
+Config Options
+ - there are many options, the few that we will cover are the ones that I think you have the most chance of actually using in the future
+ - "target":"ES2016" states the target level of JS that you want to use the ts to compile down to. "ES6" is what you likely want to be using but if you want to be sure then you can use ES5
+ - the lib option has a bunch of different libraries pre-installed that you can add but there is no reason for us to mess with this option right now. In the future you will likely be adding new libaries to these options
+ - source map creates a file that allows you to dewbug your TS file using the JS file. It creates a map while compiling that tells the run time where the js lines are created from when using the ts files
+ - "outDir": "./" defines where the js files should be placed when they are done being compiled. By default they are in the same directory as the ts file but you are able to place them in a different directory
+ - "rootDir": "./" tells the compiler where to look when finding files to compile. By default it is in the root directory where you are running the init/watch command
+ - "noEmitOnError": true   Typically when there is a type error the terminal will let you know but the file will still compile. If you enable this setting then the JS will not be created if there are any errors in the code
+ - "strict": true   This makes sure you are typing clear and concise code and shows errors if you don't. When strict is true, it activates every option below it, you are able to set this false if you want to customize the strict options yourself
+Overview
+ - when creating a progrma using TS you do not want to push the TS files and the js files since they are essentially the same thing. You should always have *.js in your gitignore from now on
+
+ES6 FEATURES
+
+ES6
+ - uses let and const to define variables in different ways
+ - Default Function Params: you are able to define a default value for function parameters, if the value is not defined it will automatically fill in a value
+ - Spead Operator: Adding ... before an iterable object will add each item from that object inidividually
+ - Rest Parameters: Allows the use of ... in the parameters to create an array from all the items in the parameters
+ - Destructuring: Multiple variables can be defined at once using destructuring for arrays or objects
+ES5
+ - only uses var to define variables
+ - Default Function Params: you define the value in the function if the value was not defined
+ - Spread Operator: The items are added to a temporary variables one at a time using a for loop
+ - Rest Parameters: Functions are created with an 'arguments' value that you can loop through with a for loop
+ - Destructuring: Each needs to be defined by hand
+One Last Thing:
+ - Sometimes there will be erros when importing libs or using the DOM
+ - You can ignore erros like this by using the !
+ - This should only be used when you know that the error is covered and proper
+
+TYPE SCRIPT BASICS:
+ - ts is microsoft's attempt to push js in a more object oriented direction
+ - one big step to doing that is adding types to the variables and objects
+ - you can add a type to any variable by placing colons, :, after it
+
+Basic Types
+ - number
+ - string
+ - boolean
+ - {}=object
+ - []=array
+ - {'str1','str2',...}=enum     defines allowed values in a variable
+ - [string,number]=tuple    defines allowed types in order in an array
+
+When to use typecasting
+ - ALWAYS when defining variables, parameters, or functions
+
+Types - variables
+ - adding types to variables is very easy, everytime you create one just add a colons
+ - let name: string = 'Jimmy';
+ - let appId: number = 12873;
+ - because of our settings they will not allow implicit 'any' types, which will help you know when to do it while starting outDir
+
+Types - functions
+ - the parameters in a function should be given types to avoid errors while developing
+ - function add(n1: number, n2: number) => return n1 + n2;
