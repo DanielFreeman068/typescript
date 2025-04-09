@@ -117,3 +117,72 @@ Types - variables
 Types - functions
  - the parameters in a function should be given types to avoid errors while developing
  - function add(n1: number, n2: number) => return n1 + n2;
+ - it is also good idea to add a type for the output of a function
+ -function printResult(num: number) : number {
+    console.log("Result: " + num)
+    return num
+  }
+ - the second you add a type for the output of a function you need a return statement or it will error
+Arrow Function
+ - const addArrow = (n1:number, n2:number): number => n1 + n2
+ -const printResult = (num: number): void => {
+    console.log('result: ' + num);
+ }
+ - void is a common phrase meaning nothing is being returned
+
+Types - objects and arrays
+ - just like modeling with mongoose, we are able to model objects using type casting
+ -const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+ }
+ - objects can be typecast inside of another type casted object
+ -const product: {
+    id: string;
+    price: number;
+    tags: string[];
+    details: {
+      title: string;
+      description: string;
+    }
+ }
+
+Types - enum
+ - to create an enumertated list(enum) use the keyword enum followed by an object of human readable values and the behind the scenes values they represent
+ -enum Role {
+    ADMIN = 'ADMIN',
+    READ_ONLY = 0,
+    AUTHOR = 100,
+ }
+ - largest advantage for enum is consistency
+ - if we create a role enum, then everywhere we use that role in the future is guaranteed to have the same value, 0 or "admin"
+ - the other advantage is storage size
+ - we are able to give roles using numbers to save space, while using enums to create human readable Code
+Types - any
+ - there is a unique type that we talked have talked about before called any
+ - just like it sounds, any can be any data type
+Types - unions
+ - variables can accept more than one type for instance a function may take a number or a string
+ - that can be defined with a vertical lines
+ - let result : string | number;
+Types - aliases
+ - if a union type is going to be used often then it is more useful to create a custom type called an alias by using the 'type' keyword
+ - type Combinable = number | string;
+ - remember: customer classes are capital
+ - an object alias can also be created so that several functions can all use the same type, creating consistency in your code
+ -type User = {name: string; age: number};
+  
+  function greet(user: User) {
+    console.log('hi, i am ' + user.name);
+  }
+
+  function is Older(user: User, checkAge: number) {
+    return checkAge > user.age;
+  }
+
+Types - function types
+ - ts is also able to store entire functions as aliases
+ - let add: (a: number, b: number) => number;
+ - the arrow is used to define the type of the returned value
