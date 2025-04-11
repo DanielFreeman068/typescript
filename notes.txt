@@ -54,8 +54,8 @@ How to compile:
 
 Watch Mode
  - there is a built in watch mode, similar to nodemon that will compile every time a change is made and saved
- - tsc app.ts -w //watches app.ts
- - tsc -w //watches files in dir
+ - npx tsc app.ts -w //watches app.ts
+ - npx tsc -w //watches files in dir
 Initialize to TS
  - watch mode does not work without a config file
  - to configure your ts compiler then you need to create the config file using:
