@@ -51,7 +51,7 @@ function displayContacts(): void {
     contacts.forEach(contact => {
     const star = contact.isFavorite ? "⭐" : "";
     console.log(
-        `ID: ${contact.id} | Name: ${contact.name} ${star}\n   📧 ${contact.email} | 📞 ${contact.phoneNumber}`
+        `ID: ${contact.id} | Name: ${contact.name} ${star}\n   Email: ${contact.email} | Phone Number: ${contact.phoneNumber}`
     );
     });
     console.log("");
@@ -72,7 +72,7 @@ function searchContacts(query: string): void {
     results.forEach(contact => {
         const star = contact.isFavorite ? "⭐" : "";
         console.log(
-        `ID: ${contact.id} | Name: ${contact.name} ${star}\n   📧 ${contact.email} | 📞 ${contact.phoneNumber}`
+        `ID: ${contact.id} | Name: ${contact.name} ${star}\n   Email: ${contact.email} | Phone Number: ${contact.phoneNumber}`
         );
     });
     }
