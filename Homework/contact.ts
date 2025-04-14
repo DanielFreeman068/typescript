@@ -34,9 +34,9 @@ function deleteContact(id: number): void {
     contacts = contacts.filter(contact => contact.id !== id);
 
     if (contacts.length < initialLength) {
-    console.log(`🗑️ Deleted contact with ID ${id}.`);
+    console.log(`Deleted contact with ID ${id}.`);
     } else {
-    console.log(`❌ No contact found with ID ${id}.`);
+    console.log(`No contact found with ID ${id}.`);
     }
 }
 
