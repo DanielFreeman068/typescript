@@ -13,3 +13,30 @@ const printResult = (num) => {
     console.log('result: ' + num);
 };
 let result = 18;
+// class Employee {
+//     public empCode: number = 12;
+//     empName: string = 'Bob'; //public is default
+// }
+// let emp = new Employee();
+//  emp.empCode = 123; //OK
+//  emp.empName = "swati"; //OK
+// console.log(emp)
+// class Employee {
+//     public empName: string = 'dan';
+//     protected empCode : number = 0;
+// }
+// class SalesEmployee extends Employee {
+//     private department: string = 'health';
+//     public checkCode = () => console.log(this.empCode);
+// }
+// let empObj = new SalesEmployee();
+// empObj.empName = 'John'
+// empObj.checkCode()
+// empObj.empCode; //compiler error
+// class Employee {
+//     readonly empCode: number = 0;
+//     empName: string = 'Dan';
+// }
+// let emp = new Employee();
+// emp.empCode = 20; //compiler error
+// emp.empName = 'Bill';

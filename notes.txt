@@ -186,3 +186,75 @@ Types - function types
  - ts is also able to store entire functions as aliases
  - let add: (a: number, b: number) => number;
  - the arrow is used to define the type of the returned value
+
+OOP - classes and interfaces
+
+Keywords
+
+Pulic
+ - the public keyword allows variables to be used inside of several classes and files without an issue in ts
+ - this is important because of modules since they run when the file is 'required'
+ - this is the default value of a variable
+
+Private
+ - private makes the variable unchangeable outside of a class
+ - most of the time this is used to protect important information that you don't want to be overwritten
+ - use getters and setters to access variables
+
+Protected
+ - private values are not available to classes that extend the original class
+ - protected values are available to extended classes, everything else is the same as private
+ -class Employee {
+  public empName: string = 'dan';
+  protected empCode : number = 0;
+ }
+
+ class SalesEmployee extends Employee {
+  private department: string = 'health';
+  public checkCode = () => console.log(this.empCode);
+ }
+
+ let empObj = SalesEmployee('John Smith', 123, 'Sales');
+ empObj.empCode; //compiler error
+
+Readonly
+ - as the name implies this throws an error if you try to change the value of a variable
+ - you use this in calsses since you can't use const
+
+These notes sucked!!
+GO LOOK AT PERSON_EXAMPLE.TS INSTEAD
+Copy and pasted person_example.ts
+class Person {
+    constructor(id:number, name: string, ssn:string, email:string){
+        this.id = id;
+        this._ssn = ssn;
+        this.email = email;
+    }
+    //readonly property can be accessed but not modified
+    public readonly id:number;
+
+    //private property can only be accessed inside this class
+    private _ssn:string;
+
+    //protected property can be accessed in this class and subclasses
+    protected email: string;
+}
+
+let alan = new Person(1, "Alan Sanchez", "832-19-8898", "daddysfootsoldier@gmail.com");
+console.log(alan);
+
+Static
+ - static makes values and methods available without needing to Initialize the class first
+ - we have already been using this, a good example is Math.PI or Math.min(), we don't need to make let math = new Math()
+ 
+ class Circle {
+    static pi: number = 3.14;
+    static findArea = (rad: number) => Circle.pi * rad ** 2
+}
+
+console.log(Circle.pi) //3.14
+console.log(Circle.findArea(10)) //314
+
+Abstract
+ - abstract makes classes, methods, or variables only accessible to extended classes
+
