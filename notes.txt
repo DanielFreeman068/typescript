@@ -258,3 +258,30 @@ console.log(Circle.findArea(10)) //314
 Abstract
  - abstract makes classes, methods, or variables only accessible to extended classes
 
+Getters and setters
+ - these are very common methods in classes that allow you to change values in the class that are otherwise protected
+ - normally there is some kind of validation that you are allowed to change that value but it doesn't need to have that
+ - to create them use the get/set keywords
+
+
+get mostRecentReport() {
+    if (this.lastReport) {
+        return this.lastReport;
+    }
+    throw new Error('no report found.');
+}
+
+set mostRecentReport(value: string) {
+    if (!value) {
+        throw new Error('please pass a valid value');
+    }
+    this.addReport(value);
+}
+
+interfaces
+ - an interface is a description of an object, including values and methods
+ - they are very similar to types but work better with classes in particular
+ - interfaces are always capitalized
+ - this is a great way to be sure that an object is guaranteed to have a method or and what that method is going to return
+ - this avoids errors in large projects where an object may be used over several files, ensuring that they have the required values and methods
+ 

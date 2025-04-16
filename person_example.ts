@@ -25,14 +25,16 @@ class Circle {
 console.log(Circle.pi) //3.14
 console.log(Circle.findArea(10)) //314
 
-abstract class PersonTwo {
-    abstract name: string;
-}
+// get mostRecentReport() {
+//     if (this.lastReport) {
+//         return this.lastReport;
+//     }
+//     throw new Error('no report found.');
+// }
 
-class Employee extends PersonTwo {
-    constructor(name: string) {
-        super();
-    }
-}
-
-let emp: PersonTwo = new Employee("James")
+// set mostRecentReport(value: string) {
+//     if (!value) {
+//         throw new Error('please pass a valid value');
+//     }
+//     this.addReport(value);
+// }
